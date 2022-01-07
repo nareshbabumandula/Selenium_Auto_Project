@@ -3,12 +3,12 @@ package com.java.basics;
 public class DataTypes {
 
 	public static void main(String[] args) {
-		// Java is case sensitive language
+		// Java is high level and case sensitive programming language
 		// Primitive data types
 		// Always use Ctrl+Spacebar for completing the syntax
 		// Run the Java Application - Click on Run button in toolbar/Right on Source Code->Run As->Java Application/Ctrl+F11
 		byte b=127;
-		short s=2145;
+		short s=2149;
 		int i=434636;
 		long l=366784;
 		float f=13.6f;
