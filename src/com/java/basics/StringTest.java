@@ -14,8 +14,8 @@ public class StringTest {
 				+ "The sample form below shows the large variety of field types and questions that are available for your forms. "
 				+ "To the left, we have listed a number of forms that can be used as templates. If you can dream it, "
 				+ "you can create it!";
-		
-		System.out.println(sText1.isEmpty());
+		System.out.println(sText1.isEmpty()); // Check if string is empty
+		System.out.println(sText1.isBlank()); // Check if string is blank
 		System.out.println(sText1.toUpperCase());
 		System.out.println(sText2.toLowerCase());
 		System.out.println(sText3);
