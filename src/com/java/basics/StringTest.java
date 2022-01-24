@@ -10,12 +10,12 @@ public class StringTest {
 		String sText4 = "";
 		String sText5 = "The variety and types of email forms that you can create with myContactForm.com are virtually endless. "
 				+ "We have created a system that can be completely tailored to fulfill any of your data submission needs. "
-				+ "We offer both the ability to create forms from templates or create custom forms from scractch. "
+				+ "We offer both the ability to create forms from templates or create custom forms from scratch. "
 				+ "The sample form below shows the large variety of field types and questions that are available for your forms. "
 				+ "To the left, we have listed a number of forms that can be used as templates. If you can dream it, "
 				+ "you can create it!";
+
 		System.out.println(sText1.isEmpty()); // Check if string is empty
-		System.out.println(sText1.isBlank()); // Check if string is blank
 		System.out.println(sText1.toUpperCase());
 		System.out.println(sText2.toLowerCase());
 		System.out.println(sText3);
