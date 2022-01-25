@@ -1,13 +1,22 @@
 package com.java.basics;
 
 public class DataTypes {
+	// Instance variables
+	int i;
+	byte b;
+	float f;
+	double d;
+	char c;
+	boolean b1;
+	long l;
+	short s;
 
 	public static void main(String[] args) {
 		// Java is high level and case sensitive programming language
 		// Primitive data types
 		// Always use Ctrl+Spacebar for completing the syntax
 		// Run the Java Application - Click on Run button in toolbar/Right on Source Code->Run As->Java Application/Ctrl+F11
-		byte b=113;
+		byte b=121;
 		short s=2149;
 		int i=434636;
 		long l=366784;
@@ -32,11 +41,11 @@ public class DataTypes {
 		System.out.println(b1 + " " + s1);
 		
 		// Narrowing/Explicit casting: Converting the bigger datatype to the smaller datatype: double->float->long->int->short->byte
-		int i1=129;
-		//byte b2=i1; //Compilation error - Unresolved compilation problem
-		byte b2=(byte)i1;
+		int i1=184;
+		//byte b2=i1; //Compilation error - java: incompatible types: possible lossy conversion from int to byte
+		byte b2= (byte) i1;
 		System.out.println(i1 + " " +b2);
-		
+
 		//Wrapper classes - Pre-defined java classes for all the primitive datatypes exists
 		System.out.println("Min value of byte is : "+ Byte.MIN_VALUE);
 		System.out.println("Max value of byte is : "+ Byte.MAX_VALUE);
@@ -47,6 +56,28 @@ public class DataTypes {
 		System.out.println("Min value of long is : "+ Long.MIN_VALUE);
 		System.out.println("Max value of long is : "+ Long.MAX_VALUE);
 		System.out.println("Size allocated for long container is : " + Long.SIZE + " bits");
+
+		short s2 = 64;
+		char c2 = (char) s2; // ASCII values (a-z - 97 to 114 and A-Z 63 to 90)
+		System.out.println(s2 + " " + c2);
+
+		byte b3 = 122;
+		double d3 = b3;
+		float f3 = b3;
+		System.out.println(b3+ " " + d3);
+		System.out.println(b3+ " " + f3);
+
+		// Create an object reference for our class
+		// ClassName objRef = new Constructor();
+		DataTypes dt = new DataTypes();
+		System.out.println("Default value of integer is : " + dt.i);
+		System.out.println("Default value of byte is : " + dt.b);
+		System.out.println("Default value of float is : " + dt.f);
+		System.out.println("Default value of double is : " + dt.d);
+		System.out.println("Default value of long is : " + dt.l);
+		System.out.println("Default value of char is : " + dt.c);
+		System.out.println("Default value of boolean is : " + dt.b1);
+		System.out.println("Default value of short is : " + dt.s);
 	}
 
 }
