@@ -12,9 +12,9 @@ public class DataTypes {
 	short s;
 
 	public static void main(String[] args) {
-		// Java is high level and case sensitive programming language
+		// Java is high level and case-sensitive programming language
 		// Primitive data types
-		// Always use Ctrl+Spacebar for completing the syntax
+		// Always use Ctrl+Space for completing the syntax
 		// Run the Java Application - Click on Run button in toolbar/Right on Source Code->Run As->Java Application/Ctrl+F11
 		byte b=121;
 		short s=2149;
@@ -78,6 +78,12 @@ public class DataTypes {
 		System.out.println("Default value of char is : " + dt.c);
 		System.out.println("Default value of boolean is : " + dt.b1);
 		System.out.println("Default value of short is : " + dt.s);
+
+		// Non primitive data types
+		String sText = "hello world";
+		sText = "hello";
+		System.out.println(sText);
+
 	}
 
 }
