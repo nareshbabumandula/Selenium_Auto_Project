@@ -37,14 +37,14 @@ public class DataTypes {
 		// Widening/Automation conversion: Converting the smaller datatype to the bigger datatype
 		//e.g. byte->short->int->long->float->double
 		byte b1=125;
-		short s1=b1; //Widening/Automation conversion
+		short s1=b1; //Widening/Automation conversion or Implicit casting
 		System.out.println(b1 + " " + s1);
 		
 		// Narrowing/Explicit casting: Converting the bigger datatype to the smaller datatype: double->float->long->int->short->byte
-		int i1=184;
-		//byte b2=i1; //Compilation error - java: incompatible types: possible lossy conversion from int to byte
-		byte b2= (byte) i1;
-		System.out.println(i1 + " " +b2);
+		short s2=130;
+		//byte b2=s2; //Compilation error - java: incompatible types: possible lossy conversion from short to byte
+		byte b2= (byte) s2;
+		System.out.println(s2 + " " +b2);
 
 		//Wrapper classes - Pre-defined java classes for all the primitive datatypes exists
 		System.out.println("Min value of byte is : "+ Byte.MIN_VALUE);
@@ -57,9 +57,9 @@ public class DataTypes {
 		System.out.println("Max value of long is : "+ Long.MAX_VALUE);
 		System.out.println("Size allocated for long container is : " + Long.SIZE + " bits");
 
-		short s2 = 64;
-		char c2 = (char) s2; // ASCII values (a-z - 97 to 114 and A-Z 63 to 90)
-		System.out.println(s2 + " " + c2);
+		short s3 = 64;
+		char c2 = (char) s3; // ASCII values (a-z - 97 to 114 and A-Z 63 to 90)
+		System.out.println(s3 + " " + c2);
 
 		byte b3 = 122;
 		double d3 = b3;
