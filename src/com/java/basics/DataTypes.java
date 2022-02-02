@@ -13,7 +13,7 @@ public class DataTypes {
 
 	public static void main(String[] args) {
 		// Java is high level and case-sensitive programming language
-		// Primitive data types
+		// Primitive data types in Java
 		// Always use Ctrl+Space for completing the syntax
 		// Run the Java Application - Click on Run button in toolbar/Right on Source Code->Run As->Java Application/Ctrl+F11
 		byte b=121;
@@ -81,6 +81,7 @@ public class DataTypes {
 
 		// Non primitive data types
 		String sText = "hello world";
+		System.out.println(sText);
 		sText = "hello";
 		System.out.println(sText);
 
