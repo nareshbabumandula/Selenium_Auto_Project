@@ -60,7 +60,7 @@ public class StringTest {
 			System.out.println(item);
 		}
 				
-		System.out.println(strText.join(">", asText));
+		System.out.println(strText.join("||", asText));
 		System.out.println(sText1.hashCode());
 		System.out.println(sText2.hashCode());
 		sText1="hi"; // Assign new string

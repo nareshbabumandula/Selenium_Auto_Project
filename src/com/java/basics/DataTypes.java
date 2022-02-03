@@ -85,6 +85,29 @@ public class DataTypes {
 		sText = "hello";
 		System.out.println(sText);
 
+		int[] Marks = {30,55,76,85,90,20}; // Array Indices 0, 1, 2, 3, 4, 5,
+		System.out.println("No of elements in marks array are : " + Marks.length);
+		System.out.println(Marks[0]);
+		System.out.println(Marks[1]);
+		System.out.println(Marks[2]);
+		System.out.println(Marks[3]);
+		System.out.println(Marks[4]);
+		System.out.println(Marks[5]);
+		//System.out.println(Marks[6]); Exception ArrayIndexOutOfBoundsException
+
+		for(int ele : Marks){
+			System.out.println("Array element is  : "  + ele);
+		}
+
+		int[] score = new int [2];
+		score[0]=90;
+		score[1]=60;
+		//score[2]=80;
+
+		for (int val: score){
+			System.out.println("Score is : " + val);
+		}
+
 	}
 
 }
