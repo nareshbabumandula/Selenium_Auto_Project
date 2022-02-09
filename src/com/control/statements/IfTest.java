@@ -9,6 +9,9 @@ public class IfTest {
 
         if(a>b){ // if block
             System.out.println("a is greater than b");
+            if (true){
+                System.out.println("Nested if condition");
+            }
         }else if(a==b){
             System.out.println("a is equal to b");
         }else { // else block

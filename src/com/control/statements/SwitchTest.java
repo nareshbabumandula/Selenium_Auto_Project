@@ -31,13 +31,5 @@ public class SwitchTest {
             default:
                 System.out.println("Invalid Day..!");
         }
-
-
-
-
-
-
-
-
     }
 }
