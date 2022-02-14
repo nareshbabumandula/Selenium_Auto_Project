@@ -1,5 +1,6 @@
 package com.application.scripts;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -34,6 +35,8 @@ public class BrowserTest {
 
         driver.get("https://www.mycontactform.com/");
         driver.manage().window().maximize(); // Maximizing the browser window
+        driver.findElement(By.id("username")).sendKeys("Radhika");
+        driver.findElement(By.id("pass")).sendKeys("Secure*12");
         Thread.sleep(3000);
         driver.quit();
     }
