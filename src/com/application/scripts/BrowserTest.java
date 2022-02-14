@@ -35,7 +35,7 @@ public class BrowserTest {
 
         driver.get("https://www.mycontactform.com/");
         driver.manage().window().maximize(); // Maximizing the browser window
-        driver.findElement(By.id("username")).sendKeys("Radhika");
+        driver.findElement(By.id("user")).sendKeys("Radhika");
         driver.findElement(By.id("pass")).sendKeys("Secure*12");
         Thread.sleep(3000);
         driver.quit();
