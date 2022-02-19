@@ -24,5 +24,7 @@ public class Calculation extends Arithmatic{
         cal.multiplication();
         cal.division();
         cal.modulus();
+
+
     }
 }
