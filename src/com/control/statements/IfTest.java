@@ -4,7 +4,7 @@ public class IfTest {
 
     public static void main(String[] args) {
 
-        byte a=40;
+        byte a=50;
         byte b=30;
 
         if(a>b){ // if block
