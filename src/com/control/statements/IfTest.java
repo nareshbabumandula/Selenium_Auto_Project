@@ -4,8 +4,8 @@ public class IfTest {
 
     public static void main(String[] args) {
 
-        byte a=60;
-        byte b=40;
+        byte a=80;
+        byte b=50;
 
         if(a>b){ // if block
             System.out.println("a is greater than b");
