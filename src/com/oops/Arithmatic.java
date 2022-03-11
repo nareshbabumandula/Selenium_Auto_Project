@@ -1,8 +1,6 @@
 package com.oops;
 
-import com.beust.ah.A;
-
-public class Arithmatic {
+public class Arithmatic extends EncapsulationExample {
 
     // Instance variables
     // State or characteristics or attributes or data members
