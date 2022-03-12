@@ -22,6 +22,7 @@ public interface RBI {
     public static void main(String[] args) {
        // RBI rb = new RBI();
         carLoan();
+
     }
 
 }
