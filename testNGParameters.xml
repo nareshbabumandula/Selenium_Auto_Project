@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Smoke">
+    <parameter name="product"  value="watch"/>
+    <test name="Simple example">
+        <classes>
+            <class name="com.testng.examples.TestReadParameters"></class>
+        </classes>
+    </test>
+</suite>
