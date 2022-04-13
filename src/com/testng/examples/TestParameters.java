@@ -27,6 +27,18 @@ public class TestParameters extends  TestDataProvider{
         System.out.println("Successfully added the product : " + product);
     }
 
+    @Test(invocationCount = 10, priority = 2)
+    public void verifyProduct(){
+        System.out.println("Successfully verified the product");
+    }
+
+    @Test(timeOut = 3000, priority = 3)
+    public void checkStock() throws InterruptedException {
+        Thread.sleep(2000);
+        System.out.println("Successfully checked the stock");
+    }
+
+
     @AfterClass
     public void closeBrowser(){
         System.out.println("Successfully closed the browser");

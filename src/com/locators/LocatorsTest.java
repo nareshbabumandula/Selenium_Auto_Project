@@ -14,7 +14,6 @@ public class LocatorsTest {
 
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
-
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.get("https://www.mycontactform.com/");
@@ -23,6 +22,9 @@ public class LocatorsTest {
 
         // Locators
         // Absolute xpath starts from root or parent node of the html DOM
+        driver.findElement(By.xpath("/html/body/div[3]/div[2]/div[1]/form/fieldset/div[1]/input")).sendKeys("Shashikala");
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[3]/div[2]/div[1]/form/fieldset/div[1]/input")).clear();
         driver.findElement(By.xpath("/html/body/div[3]/div[3]/form/table/tbody/tr[2]/td/input")).sendKeys("Test Subject");
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/div[3]/div[3]/form/table/tbody/tr[2]/td/input")).clear();
@@ -51,7 +53,7 @@ public class LocatorsTest {
         Thread.sleep(2000);
         String emailaddress = driver.findElement(By.xpath("//input[starts-with(@id,'ema')]")).getAttribute("value");
         System.out.println(emailaddress);
-        Assert.assertEquals(emailaddress, "naresh223@gmail.com", "Email address entered is not correct");
+        Assert.assertEquals(emailaddress, "naresh@gmail.com", "Email address entered is not correct");
         driver.findElement(By.xpath("//input[contains(@id,'ema')]")).clear();
 
         driver.quit();

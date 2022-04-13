@@ -6,6 +6,6 @@ public class TestDataProvider {
 
     @DataProvider(name="Items")
     public Object[][] productsData(){
-        return new Object[][] {{"iphone"}};
+        return new Object[][] {{"iphone"}, {"samsung"}, {"realme"}};
     }
 }
