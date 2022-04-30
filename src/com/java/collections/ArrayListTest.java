@@ -28,8 +28,21 @@ public class ArrayListTest {
         alist.add("Akhila");
         alist.add("Srilatha");
         alist.add("Mounika");
+        alist.add(null);
+        alist.add(null);
+        alist.set(0,"Akhila"); //index – index of the element to replace
+        alist.add(0, "Naresh"); //index – index at which the specified element is to be inserted
+        System.out.println(alist);
+        alist.remove("Asif");
 
         // Traverse the arraylist via iterator
+        /**
+         * Iterator and for-each loop are faster than simple for loop for collections with no random access,
+         * while in collections which allows random access there is no performance change with for-each
+         * loop/for loop/iterator
+         *
+         * An Iterator is an object that can be used to loop through collections, like ArrayList and HashSet.
+         */
         Iterator iter = alist.iterator();
         while(iter.hasNext()){
             System.out.println(iter.next());

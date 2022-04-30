@@ -12,6 +12,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class LocatorsExample {
 
     WebDriver driver;
@@ -82,6 +84,68 @@ public class LocatorsExample {
         driver.findElement(By.cssSelector("input[value*='Third']")).click();
         Thread.sleep(2000);
 
+        //boolean bFlag = driver.findElement(By.cssSelector("h5:contains('Business')")).isDisplayed();
+        //System.out.println("Business forms object display status is : " +bFlag);
+
+        // Absolute path using CSS
+        driver.findElement(By.cssSelector("html>body>div:nth-child(3)>div:nth-child(2)" +
+                ">div>form>fieldset>div>input")).clear();
+        Thread.sleep(2000);
+        driver.findElement(By.cssSelector("html>body>div:nth-child(3)>div:nth-child(2)" +
+                ">div>form>fieldset>div>input")).sendKeys("srilatha");
+        Thread.sleep(2000);
+        driver.findElement(By.cssSelector("div:nth-child(2)" +
+                ">div>form>fieldset>div>input")).clear();
+        Thread.sleep(2000);
+        driver.findElement(By.cssSelector("div:nth-child(2)" +
+                ">div>form>fieldset>div>input")).sendKeys("akhila");
+
+
+
+        // XPath - Absolute xpath
+        WebElement sub = driver.findElement(By.xpath("/html/body/div[3]/div[3]/form/table/tbody/tr[2]/td/input"));
+        sub.clear();
+        sub.sendKeys("mounika@gmail.com");
+
+        // XPath - Relative xpath
+        WebElement email = driver.findElement(By.xpath("//input[@id='email']"));
+        email.clear();
+        email.sendKeys("mounika@gmail.com");
+
+        // XPath - and Operator
+        WebElement subj = driver.findElement(By.xpath("//input[@id='subject' and @name='subject']"));
+        subj.clear();
+        subj.sendKeys("Test Subject123");
+        Thread.sleep(2000);
+
+        // XPath - or Operator
+        WebElement subje = driver.findElement(By.xpath("//input[@id='subject' or @name='subject']"));
+        //WebElement subje = driver.findElement(By.xpath("//input[@id='shashikala']|//input[@name='subject']"));
+        subje.clear();
+        subje.sendKeys("Test Subject12345");
+        Thread.sleep(2000);
+
+        // XPath - starts-with
+        WebElement subjec = driver.findElement(By.xpath("//input[starts-with(@id,'sub')]"));
+        subjec.clear();
+        subjec.sendKeys("Subject123");
+        Thread.sleep(2000);
+
+        // XPath - contains
+        WebElement endssub = driver.findElement(By.xpath("//input[contains(@id,'subj')]"));
+        endssub.clear();
+        endssub.sendKeys("Subject12345");
+        Thread.sleep(2000);
+
+        // XPath - contains text()
+        WebElement business = driver.findElement(By.xpath("//h5[contains(text(),'Business Forms')]"));
+        System.out.println(business.isDisplayed());
+        String url = "";
+        List<WebElement> businessforms = driver.findElements(By.xpath("//h5[contains(text(),'Business Forms')]/following::ul[1]/li"));
+        for(WebElement link : businessforms){
+            System.out.println(link.getText());
+        }
+
 
     }
 
@@ -92,7 +156,7 @@ public class LocatorsExample {
         homepage.enterUsername("naresh");
         homepage.enterPassword("Secure*1234");
         homepage.clickLogin();
-        homepage.clickSampleForm();
+        //homepage.clickSampleForm();
         // Checkpoint or assertion
         String heading = sampleforms.verifySampleFormsHeading();
         Assert.assertEquals(heading, "Sample Email and Contact Forms", "Sample Forms page heading is not correct");
