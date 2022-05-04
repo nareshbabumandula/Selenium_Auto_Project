@@ -5,6 +5,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.*;
 
+/**
+ * We use collections to operations like store/add a group of objects, manipulate, search, sort etc.
+ */
 public class ArrayListTest {
 
     /**
@@ -35,6 +38,7 @@ public class ArrayListTest {
         System.out.println(alist);
         alist.remove("Asif");
 
+
         // Traverse the arraylist via iterator
         /**
          * Iterator and for-each loop are faster than simple for loop for collections with no random access,
@@ -62,6 +66,9 @@ public class ArrayListTest {
         alist.clear();
         System.out.println(alist);
         System.out.println("After clearing the list : " + alist.isEmpty());
+
+        // Lambda expression with foreach loop
+        alist.forEach((n)-> System.out.println(n));
 
 
     }
