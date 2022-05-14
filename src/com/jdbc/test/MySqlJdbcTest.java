@@ -1,9 +1,6 @@
 package com.jdbc.test;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class MySqlJdbcTest {
 
@@ -24,9 +21,10 @@ public class MySqlJdbcTest {
         //Establish the Connection b/w JavaPgm to MySql
         Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/amazon","root","root");
         System.out.println("Database connection status is : " + con.isClosed());
+        ResultSet rs = null;
 
         //Create the Statement Object to Pass Sqlquery to db server
-        Statement st=con.createStatement();
+        Statement st=con.createStatement(); //Creates a Statement object for sending SQL statements to the database
         int a = st.executeUpdate("drop table Customers");
         System.out.println(a);
         //Process or execute the sql query which is passing to db
@@ -34,6 +32,15 @@ public class MySqlJdbcTest {
         System.out.println(i);
         int j = st.executeUpdate("insert into Customers values(111, 'Naresh', 'Kphb')");
         System.out.println(j);
+        rs = st.executeQuery("select * from Customers");
+
+        while(rs.next()){
+            int custID = rs.getInt("id");
+            String name = rs.getString("name");
+            String address = rs.getString("Address");
+            System.out.println(custID + " " + name + " " + address);
+        }
+
         int k=st.executeUpdate("update Customers set id=222 where id=111");
         System.out.println(k);
         int l=st.executeUpdate("delete from Customers where id=222");
