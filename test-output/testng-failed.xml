@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default Suite]">
+  <test name="Selenium_Project(failed)">
+    <classes>
+      <class name="com.testng.examples.BeforeAfterClassTest">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="verifyStock"/>
+          <include name="accessSite"/>
+        </methods>
+      </class> <!-- com.testng.examples.BeforeAfterClassTest -->
+    </classes>
+  </test> <!-- Selenium_Project(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->

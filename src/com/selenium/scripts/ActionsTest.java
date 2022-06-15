@@ -4,13 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.util.TreeSet;
+import java.util.concurrent.TimeUnit;
 
-public class ImageTest {
+public class ActionsTest {
 
     WebDriver driver;
 
@@ -21,15 +22,14 @@ public class ImageTest {
     }
 
     @Test
-    public void imageMethods() throws InterruptedException {
-        driver.get("https://www.mycontactform.com/");
+    public void actionsMethods() throws InterruptedException {
+        driver.get("https://www.copart.com/");
         driver.manage().window().maximize(); // maximize the browser window
-        WebElement imageLogo = driver.findElement(By.className("test_img"));
-        System.out.println(imageLogo.isEnabled());
-        System.out.println(imageLogo.isDisplayed());
-        System.out.println(imageLogo.isSelected());
-        System.out.println(imageLogo.getAttribute("src"));
-        imageLogo.click(); // click on image
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        WebElement sellVehicle = driver.findElement(By.linkText("Sell a Vehicle"));
+        Actions action = new Actions(driver);
+        action.moveToElement(sellVehicle).perform();
+        driver.findElement(By.linkText("For Dealers")).click();
     }
 
     @AfterClass
@@ -37,4 +37,6 @@ public class ImageTest {
         Thread.sleep(4000);
         driver.quit();
     }
+
+
 }
