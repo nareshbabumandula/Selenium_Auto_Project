@@ -38,6 +38,19 @@ public class ActionsTest {
         WebElement btnSearch = driver.findElement(By.xpath("//button[contains(text(),'Search Inventory')]"));
         action.contextClick(btnSearch).perform();
 
+        driver.navigate().to("https://jqueryui.com/");
+        driver.findElement(By.linkText("Draggable")).click();
+        driver.switchTo().frame(0); // Switch into the frame
+        //driver.switchTo().frame(driver.findElement(By.className("demo-frame")));
+        WebElement dragMeAround = driver.findElement(By.xpath("//p[contains(text(),'Drag me around')]"));
+        action.dragAndDropBy(dragMeAround, 290, 140).perform();
+        driver.switchTo().defaultContent(); // Switch out from the frame
+        driver.findElement(By.linkText("Droppable")).click();
+        driver.switchTo().frame(0); // Switch into the frame
+        WebElement source = driver.findElement(By.id("draggable"));
+        WebElement dest = driver.findElement(By.id("droppable"));
+        action.dragAndDrop(source, dest).perform();
+
     }
 
     @AfterClass
