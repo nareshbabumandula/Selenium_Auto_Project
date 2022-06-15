@@ -11,6 +11,10 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Actions class in Selenium is primarily used to simulate input actions from mouse and keyboard on specific
+ * web elements (For eg: Left click, Right click, Double click, etc)
+ */
 public class ActionsTest {
 
     WebDriver driver;
@@ -30,6 +34,10 @@ public class ActionsTest {
         Actions action = new Actions(driver);
         action.moveToElement(sellVehicle).perform();
         driver.findElement(By.linkText("For Dealers")).click();
+
+        WebElement btnSearch = driver.findElement(By.xpath("//button[contains(text(),'Search Inventory')]"));
+        action.contextClick(btnSearch).perform();
+
     }
 
     @AfterClass
