@@ -18,6 +18,7 @@ public class BufferedReaderTest {
 			File file = new File( "./Files/Data.txt");
 			FileReader fr = new FileReader(file);
 			BufferedReader br= new BufferedReader(fr);
+
 			/*
 			 * int content; while ((content=br.read())!=-1) {
 			 * System.out.println((char)content); }

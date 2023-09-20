@@ -1,9 +1,6 @@
 package com.java.collections;
 
 
-
-import com.sun.jmx.remote.internal.ArrayQueue;
-
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Iterator;

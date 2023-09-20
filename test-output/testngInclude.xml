@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/nares/Documents/GitHub/Selenium_Jan22/src/com/testng/examples/IncludeTest.java">
+        <classes>
+            <class name="com.testng.examples.IncludeTest">
+                <methods>
+                    <include name="^vehicle.*"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,5 +1,6 @@
 package com.io;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -17,7 +18,6 @@ public class FileReaderTest {
 				System.out.println(file.canRead());
 				System.out.println(file.canWrite());
 				System.out.println(file.canExecute());
-				
 				System.out.println(file.getName());
 				System.out.println(file.getAbsolutePath());
 				System.out.println(file.getPath());
@@ -26,9 +26,10 @@ public class FileReaderTest {
 				System.out.println("File does not exist in the specified path");
 			}
 			FileReader fr = new FileReader(file);
+
 			int content;
 			while ((content=fr.read())!=-1) {
-				System.out.println((char)content);
+				System.out.print((char)content);
 			}
 			bFlag=true;
 		} catch (IOException e) {

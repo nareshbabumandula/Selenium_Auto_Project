@@ -18,7 +18,7 @@ public class ReadExcelPOI {
 		FileInputStream fis = new FileInputStream(strFilepath);
 		//HSSFWorkbook wb = new HSSFWorkbook(fis); // Create workbook class object
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
-		
+
 		//HSSFSheet sh = wb.getSheet("Login"); // To access the Login sheet
 		XSSFSheet sh = wb.getSheet("Login");
 		//HSSFSheet sh1 = wb.getSheet("Registration"); // To access the Registration sheet
@@ -26,7 +26,7 @@ public class ReadExcelPOI {
 		System.out.println(sh.getSheetName());
 		System.out.println(sh1.getSheetName());
 		
-		int nRows = sh.getLastRowNum()-sh.getFirstRowNum();
+		int nRows = sh.getLastRowNum()-sh.getFirstRowNum(); // Get No of Rows from used range
 	
 		System.out.println("No of rows in login sheet are : " + nRows);
 		

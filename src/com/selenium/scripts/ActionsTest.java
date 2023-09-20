@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.locators.RelativeLocator;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -27,16 +29,17 @@ public class ActionsTest {
 
     @Test
     public void actionsMethods() throws InterruptedException {
-        driver.get("https://www.copart.com/");
+        driver.get("https://www.spicejet.com/");
         driver.manage().window().maximize(); // maximize the browser window
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        WebElement sellVehicle = driver.findElement(By.linkText("Sell a Vehicle"));
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        WebElement addons = driver.findElement(By.xpath("//div[contains(text(),'Add-ons')]"));
+        Thread.sleep(2000);
         Actions action = new Actions(driver);
-        action.moveToElement(sellVehicle).perform();
-        driver.findElement(By.linkText("For Dealers")).click();
-
-        WebElement btnSearch = driver.findElement(By.xpath("//button[contains(text(),'Search Inventory')]"));
-        action.contextClick(btnSearch).perform();
+        action.moveToElement(addons).perform();
+        driver.findElement(By.linkText("Hot Meals")).click();
+        Thread.sleep(2000);
+        WebElement hotmeals = driver.findElement(By.linkText("Hot Meals"));
+        action.contextClick(hotmeals).perform();
 
         driver.navigate().to("https://jqueryui.com/");
         driver.findElement(By.linkText("Draggable")).click();
@@ -50,7 +53,6 @@ public class ActionsTest {
         WebElement source = driver.findElement(By.id("draggable"));
         WebElement dest = driver.findElement(By.id("droppable"));
         action.dragAndDrop(source, dest).perform();
-
     }
 
     @AfterClass

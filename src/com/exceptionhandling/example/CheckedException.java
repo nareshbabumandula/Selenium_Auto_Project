@@ -7,10 +7,12 @@ import java.io.FileNotFoundException;
 public class CheckedException {
 
     public void checkedExceptionExample() throws FileNotFoundException {
-        String strFilePath = "C:\\Users\\nares\\Documents\\GitHub\\Selenium_Jan22\\Files\\Data123.txt";
+
+        String strFilePath = "./Files/Data123.txt";
         File file = new File(strFilePath);
         FileInputStream fis = new FileInputStream(file);
         System.out.println("After exception..!");
+
     }
 
     public void checkedExceptionTryCatchExample() {
@@ -36,7 +38,7 @@ public class CheckedException {
 
     public static void main(String[] args) throws FileNotFoundException {
         CheckedException ce = new CheckedException();
-        //ce.checkedExceptionExample();
-        ce.checkedExceptionTryCatchExample();
+        ce.checkedExceptionExample();
+        //ce.checkedExceptionTryCatchExample();
     }
 }

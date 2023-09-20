@@ -39,6 +39,7 @@ public class TextboxTest {
         System.out.println(valueafter.isEmpty() + "-" + valueafter);
         Assert.assertEquals(valueafter, "naresh223","Expected value is not matching with the actual value");
         username.clear(); // clears the text from the text field
+        username.sendKeys();
     }
 
     @AfterClass

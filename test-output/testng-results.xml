@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="4" passed="4">
+  <reporter-output>
+    <line>
+      <![CDATA[Successfully added the product to the cart]]>
+    </line>
+  </reporter-output>
+  <suite name="Default Suite" duration-ms="24" started-at="2022-04-01T10:28:45Z" finished-at="2022-04-01T10:28:45Z">
+    <groups>
+    </groups>
+    <test name="Selenium_Project" duration-ms="24" started-at="2022-04-01T10:28:45Z" finished-at="2022-04-01T10:28:45Z">
+      <class name="com.testng.examples.BeforeAfterClassTest">
+        <test-method status="PASS" signature="accessSite()[pri:0, instance:com.testng.examples.BeforeAfterClassTest@13b6d03]" name="accessSite" is-config="true" duration-ms="10" started-at="2022-04-01T15:58:45Z" finished-at="2022-04-01T15:58:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accessSite -->
+        <test-method status="PASS" signature="verifylogin()[pri:-3, instance:com.testng.examples.BeforeAfterClassTest@13b6d03]" name="verifylogin" duration-ms="1" started-at="2022-04-01T15:58:45Z" finished-at="2022-04-01T15:58:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifylogin -->
+        <test-method status="PASS" signature="searchProduct()[pri:-2, instance:com.testng.examples.BeforeAfterClassTest@13b6d03]" name="searchProduct" duration-ms="0" started-at="2022-04-01T15:58:45Z" finished-at="2022-04-01T15:58:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchProduct -->
+        <test-method status="PASS" signature="verifyStock()[pri:0, instance:com.testng.examples.BeforeAfterClassTest@13b6d03]" name="verifyStock" duration-ms="1" started-at="2022-04-01T15:58:45Z" description="This method is used to check the product stock availability" finished-at="2022-04-01T15:58:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyStock -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.testng.examples.BeforeAfterClassTest@13b6d03]" name="closeBrowser" is-config="true" duration-ms="0" started-at="2022-04-01T15:58:45Z" finished-at="2022-04-01T15:58:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method status="PASS" signature="addtoCart()[pri:0, instance:com.testng.examples.BeforeAfterClassTest@13b6d03]" name="addtoCart" duration-ms="0" started-at="2022-04-01T15:58:45Z" depends-on-methods="com.testng.examples.BeforeAfterClassTest.verifyStock" finished-at="2022-04-01T15:58:45Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Successfully added the product to the cart]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- addtoCart -->
+      </class> <!-- com.testng.examples.BeforeAfterClassTest -->
+    </test> <!-- Selenium_Project -->
+  </suite> <!-- Default Suite -->
+</testng-results>

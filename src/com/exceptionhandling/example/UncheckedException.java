@@ -49,7 +49,6 @@ public class UncheckedException {
         }
     }
 
-
     public static void main(String[] args) {
 
         UncheckedException uc = new UncheckedException();
