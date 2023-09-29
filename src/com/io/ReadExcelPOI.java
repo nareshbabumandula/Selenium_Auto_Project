@@ -45,6 +45,7 @@ public class ReadExcelPOI {
 			System.out.println();
 		}
 		wb.close();
+
 	}
 
 	public static void main(String[] args) throws BiffException, IOException {
