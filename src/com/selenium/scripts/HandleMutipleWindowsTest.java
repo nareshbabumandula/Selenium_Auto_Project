@@ -28,6 +28,7 @@ public class HandleMutipleWindowsTest {
         String mainwindow = driver.getWindowHandle();
         System.out.println(mainwindow);
         String newTab = Keys.chord(Keys.CONTROL, Keys.RETURN);
+     
         driver.findElement(By.linkText("Sample Forms")).sendKeys(newTab);
         Set<String> windows = driver.getWindowHandles();
         System.out.println(windows);
