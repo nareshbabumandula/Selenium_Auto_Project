@@ -23,11 +23,12 @@ public class BrokenLinks {
         HttpURLConnection huc = null;
         int respCode = 200;
 
-        WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(homePage);
         List<WebElement> links = driver.findElements(By.tagName("a"));
+        System.out.println("No of links found in homepage are : " + links.size());
 
         Iterator<WebElement> it = links.iterator();
 
