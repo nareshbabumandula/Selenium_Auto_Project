@@ -120,8 +120,12 @@ public class LocatorsTest {
 			driver.findElement(By.tagName("input")).sendKeys("Yogesh");
 			Thread.sleep(2000);
 			driver.findElement(By.tagName("input")).clear();
-
-
+			
+			// Using XPath Axes function ancestor
+			driver.findElement(By.xpath("//input[@id='pass']/ancestor::fieldset/div/input")).sendKeys("Sudheer");
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//input[@id='pass']/ancestor::fieldset/div/input")).clear();
+			
 
 			test.log(LogStatus.PASS, "Successfully used all the available locators in Selenium");
 		} catch (Exception e) {
