@@ -30,7 +30,7 @@ public class SampleForms {
 	}
 
 	@Test
-	public void textboxMethods() throws InterruptedException {
+	public void submitSampleForm() throws InterruptedException {
 		long startTime = System.currentTimeMillis();
 		SampleFormspage sp = new SampleFormspage(driver);
 		System.out.println("Execution started at : " + (System.currentTimeMillis()-startTime) +" ms");
