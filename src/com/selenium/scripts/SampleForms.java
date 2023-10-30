@@ -3,10 +3,12 @@ package com.selenium.scripts;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.custom.listeners.HighlightingListener;
 import com.object.repository.Loginpage;
 import com.object.repository.SampleFormspage;
 import com.relevantcodes.extentreports.ExtentReports;
@@ -22,10 +24,21 @@ public class SampleForms {
 	ExtentTest test;
 
 	@BeforeClass
-	public void launchBrowser(){
+	public void launchBrowser() throws InterruptedException{
 		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
 		driver = new ChromeDriver();
-		reports = new ExtentReports(System.getProperty("user.dir") +"\\Extent Reports\\Automation Results.html", true);
+		// Create an EventFiringWebDriver instance with your WebDriver
+        EventFiringWebDriver eventDriver = new EventFiringWebDriver(driver);
+
+        // Create an instance of your custom listener
+        HighlightingListener highlightingListener = new HighlightingListener();
+
+        // Register the listener with the EventFiringWebDriver
+        eventDriver.register(highlightingListener);
+        eventDriver.get("https://jqueryui.com/autocomplete/");
+        eventDriver.findElement(By.linkText("Draggable"));
+        Thread.sleep(3000);
+ 		reports = new ExtentReports(System.getProperty("user.dir") +"\\Extent Reports\\Automation Results.html", true);
 		test = reports.startTest("Locators Test");
 	}
 
@@ -36,7 +49,7 @@ public class SampleForms {
 		System.out.println("Execution started at : " + (System.currentTimeMillis()-startTime) +" ms");
 		String err_Msg;
 		try {
-			driver.get("https://www.mycontactform.com/");
+			driver.navigate().to("https://www.mycontactform.com/");
 			driver.manage().window().maximize(); // maximize the browser window
 			// Scripting with Page Object Model
 			driver.findElement(lp.username).sendKeys("Sai");
